@@ -6,5 +6,7 @@
 <%= @park.state %>
 <%= @park.description %>
 
-<%= link_to "Edit", edit_park_path(park) %>
+<%= link_to "Edit", edit_park_path(@park) %>
+<%= link_to 'Delete', park_path(@park),
+method: :delete, data: {confirm: "Are your sure?" } %>
 <%= link_to "Back", parks_path %>
