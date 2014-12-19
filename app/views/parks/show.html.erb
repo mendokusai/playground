@@ -6,6 +6,18 @@
 <%= @park.state %>
 <%= @park.description %>
 
+<h2>Add a comment:</h2>
+<%= form_for([@park, @park.comments.build]) do |f| %>
+<p>
+<%= f.label :comment %><br>
+<%= f.text_area :comment %>
+</p>
+<p>
+<%= f.submit %>
+</p>
+<% end %>
+
+
 <%= link_to "Edit", edit_park_path(@park) %>
 <%= link_to 'Delete', park_path(@park),
 method: :delete, data: {confirm: "Are your sure?" } %>
