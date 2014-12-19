@@ -21,6 +21,19 @@ class ParksController < ApplicationController
 		@park = Park.find(params[:id])
 	end
 
+	def edit
+		@park = Park.find(params[:id])
+	end
+
+	def update
+		@park = Park.new(park_params)
+		if @park.save
+			redirect_to @park
+		else
+			render 'new'
+		end
+	end
+
 	private
 		def park_params
 			params.require(:park).permit(:name, :address, 

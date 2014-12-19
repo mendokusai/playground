@@ -2,7 +2,11 @@
 <ul>
 <% @parks.each do |park| %>
 	<li><strong><%= park.name %></strong>
-	<%= park.city %></li>
+	<%= park.city %>
+		<%= link_to "Show", park_path(park) %>
+	<%= link_to "Edit", edit_park_path(park) %>
+
+	</li>
 
 <% end %>
 </ul>
