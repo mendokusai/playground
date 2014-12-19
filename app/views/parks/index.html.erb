@@ -1,0 +1,10 @@
+<h1>Park Index</h1>
+<ul>
+<% @parks.each do |park| %>
+	<li><strong><%= park.name %></strong>
+	<%= park.city %></li>
+
+<% end %>
+</ul>
+
+<%= link_to "Add A Park", new_park_path %>
