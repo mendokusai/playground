@@ -21,6 +21,7 @@ class ParksController < ApplicationController
 
 	def show
 		@park = Park.find(params[:id])
+		@zoom = 16
 	end
 
 	def edit

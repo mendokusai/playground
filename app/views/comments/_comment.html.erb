@@ -2,3 +2,8 @@
 <strong>Comment</strong>
 <%= comment.comment %>
 </p>
+
+<p>
+<%= link_to 'Delete Comment', [comment.park, comment], method: :delete,
+data: {confirm: "Are you sure?"} %>
+</p>
