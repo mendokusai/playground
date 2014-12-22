@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
+	before_action :authenticate_user!, only: [:create]
+	before_action :authorize_admin!, only: [:delete]
 
 	def create
 		@park = Park.find(params[:park_id])
+		@user = current_user
 		@comment = @park.comments.create(comment_params)
 		redirect_to park_path(@park)
+		
 	end
 
 	def destroy

@@ -1,9 +1,14 @@
 <p>
-<strong>Comment</strong>
-<%= comment.comment %>
+<%= comment.comment %> 
+<%# unless @user == nil %>
+<!-- <strong>@user.username</strong> -->
+<%# else %>
+<strong>Anonymous</strong>
+<% #end %>
 </p>
-
-<p>
-<%= link_to 'Delete Comment', [comment.park, comment], method: :delete,
-data: {confirm: "Are you sure?"} %>
-</p>
+<% if user_signed_in? && current_user.admin? %>
+	<p>
+		<%= link_to 'Delete Comment', [comment.park, comment], method: :delete,
+	data: {confirm: "Are you sure?"} %>
+	</p>
+<% end %>

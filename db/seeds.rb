@@ -19,6 +19,22 @@
 # last sign in ip
 # created at
 # updated at
+# username
+# admin
+
+ryan_admin = User.create({
+	email: "admin@ryanpauley.com",
+	password: "password",
+	username: "ADMIN",
+	admin: true
+	})
+
+ryan_user = User.create({
+	email: "info@ryanpauley.com",
+	password: "password",
+	username: "ryan",
+	admin: false
+	})
 
 
 

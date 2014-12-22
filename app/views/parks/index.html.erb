@@ -4,8 +4,11 @@
 	<li><strong><%= park.name %></strong>
 	<%= park.city %>
 		<%= link_to "Show", park_path(park) %>
-	<%= link_to "Edit", edit_park_path(park) %>
-
+	<% unless current_user == nil %>
+		<% if current_user.admin? %>
+			<%= link_to "Edit", edit_park_path(park) %>
+	<% end %>
+	<% end %>
 	</li>
 
 <% end %>
