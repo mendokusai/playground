@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   validates_presence_of :user_name
-    validates :user_name, uniqueness: true
+   validates_presence_of :username
+    validates :username, uniqueness: true
 
   def admin?
     admin

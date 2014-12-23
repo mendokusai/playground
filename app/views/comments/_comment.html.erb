@@ -1,10 +1,10 @@
 <p>
 <%= comment.comment %> 
-<%# unless @user == nil %>
-<!-- <strong>@user.username</strong> -->
-<%# else %>
+<% unless @user == nil %>
+<strong>@user.username</strong>
+<% else %>
 <strong>Anonymous</strong>
-<% #end %>
+<% end %>
 </p>
 <% if user_signed_in? && current_user.admin? %>
 	<p>
