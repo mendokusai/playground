@@ -4,8 +4,9 @@ class CommentsController < ApplicationController
 
 	def create
 		@park = Park.find(params[:park_id])
-		@user = current_user
+		# @comment = Comment.joins(parks: [{comments: @user}, :park_id]).create(comment_params)
 		@comment = @park.comments.create(comment_params)
+		# @comment = @park.comments.create(comment_params)
 		redirect_to park_path(@park)
 		
 	end
@@ -20,6 +21,6 @@ class CommentsController < ApplicationController
 
 	private
 	def comment_params
-		params.require(:comment).permit(:comment)
+		params.require(:comment).permit(:comment, :user_id, :park_id)
 	end
 end

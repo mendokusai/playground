@@ -1,9 +1,10 @@
 <p>
 <%= comment.comment %> 
-<% unless @user == nil %>
-<strong>@user.username</strong>
+<%= comment.user_id %>
+<% if @user == nil %>
+	<strong>Anonymous</strong>
 <% else %>
-<strong>Anonymous</strong>
+	<strong><%= @user.username %></strong>
 <% end %>
 </p>
 <% if user_signed_in? && current_user.admin? %>

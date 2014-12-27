@@ -3,6 +3,7 @@ class Park < ActiveRecord::Base
 	after_validation :geocode
 
 	has_many :comments
+	has_many :users
 
 	validates_presence_of :name, :address, :city, :state
 
