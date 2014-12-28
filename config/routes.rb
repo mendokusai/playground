@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   get 'users/index'
 
+  get 'equipments/index'
+
   devise_for :users
   
   resources :parks do
     resources :comments
   end
 
+  resources :equipments
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

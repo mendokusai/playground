@@ -7,10 +7,8 @@
 <% end %>
 <% if user_signed_in? %>
 	<% if current_user.id == comment.user_id || current_user.admin?%>
-		<p>
 			<%= link_to 'Delete Comment', [comment.park, comment], method: :delete,
 		data: {confirm: "Are you sure?"} %>
-		</p>
 	<% end %>
 <% end %>
 </p>

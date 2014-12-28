@@ -22,6 +22,8 @@
 # username
 # admin
 
+User.destroy_all
+
 ryan_admin = User.create({
 	email: "admin@ryanpauley.com",
 	password: "password",
@@ -50,6 +52,8 @@ ryan_user = User.create({
 # lat
 # long
 
+Park.destroy_all
+
 park1 = Park.create({
 	name: "Cook Oval",
 	address: "Biffin Street",
@@ -64,4 +68,24 @@ park2 = Park.create({
 	city: "Aranda",
 	state: "ACT",
 	description: "Nice fields, boring playground."
+	})
+
+# #equipment
+##(id)
+## name (string)
+## description (text)
+## age_range (string)
+
+Equipment.destroy_all
+
+swing = Equipment.create({
+	name: "Child Swing",
+	description: "A chain-rope swing with a hard rubber seat board.",
+	age_range: "4-12"
+	})
+
+baby_swing = Equipment.create({
+	name: "Infant Swing",
+	description: "A chain-rope swing with a rubber bucket seat.",
+	age_range: "6mo - 4yrs"
 	})

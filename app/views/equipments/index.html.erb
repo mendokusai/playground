@@ -1,0 +1,12 @@
+<h2>Equipment Index</h2>
+<ul>
+<% @equip.each do |item| %>
+	<li><%= item.id %> <%= item.name %></li>
+	<p>
+		Age Range: <%= item.age_range %>
+	</p>
+	<p>
+		Description: <%= item.description %>
+	</p>
+<% end %>
+</ul>
