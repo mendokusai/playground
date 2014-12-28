@@ -1,15 +1,17 @@
 <p>
-<%= comment.comment %> 
-<%= comment.user_id %>
-<% if @user == nil %>
-	<strong>Anonymous</strong>
-<% else %>
-	<strong><%= @user.username %></strong>
+" <%= comment.comment %> " said: 
+<% @users.each do |user| %>
+	<% if user.id == comment.user_id %>
+		<strong class="username"><%= user.username %></strong>
+	<% end %>
+<% end %>
+<% if user_signed_in? %>
+	<% if current_user.id == comment.user_id || current_user.admin?%>
+		<p>
+			<%= link_to 'Delete Comment', [comment.park, comment], method: :delete,
+		data: {confirm: "Are you sure?"} %>
+		</p>
+	<% end %>
 <% end %>
 </p>
-<% if user_signed_in? && current_user.admin? %>
-	<p>
-		<%= link_to 'Delete Comment', [comment.park, comment], method: :delete,
-	data: {confirm: "Are you sure?"} %>
-	</p>
-<% end %>
+ 
