@@ -1,12 +1,16 @@
 <h2>Equipment Index</h2>
 <ul>
-<% @equip.each do |item| %>
-	<li><%= item.id %> <%= item.name %></li>
+<% @equips.each do |item| %>
+	<h5><%= link_to item.name, item %></h5>
 	<p>
-		Age Range: <%= item.age_range %>
+		<strong>Age Range:</strong> 
+		<%= item.age_range %>
 	</p>
 	<p>
-		Description: <%= item.description %>
+		<strong>Description:</strong> 
+		<%= item.description %>
 	</p>
 <% end %>
 </ul>
+
+<%= link_to "Add Equipment", new_equipment_path %>

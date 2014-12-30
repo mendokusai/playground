@@ -1,0 +1,19 @@
+<h1><%= @equip.name %></h1>
+
+<h5>Age Range</h5>
+
+<p><%= @equip.age_range %></p>
+
+<h3>Description</h3>
+
+<p><%= @equip.description %></p>
+
+<%= link_to "Back to Index", equipments_path %>
+<% if user_signed_in? %>
+	<%= link_to "Edit", edit_equipment_path(@equip) %>
+
+	<% if current_user.admin? %>
+		<%= link_to "Delete", equipment_path(@equip),
+	method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+<% end %>
