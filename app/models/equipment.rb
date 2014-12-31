@@ -1,3 +1,4 @@
 class Equipment < ActiveRecord::Base
-  belongs_to :park
+  has_many :park_equipments
+  has_many :parks, through: :park_equipments
 end

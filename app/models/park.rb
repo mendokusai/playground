@@ -4,7 +4,8 @@ class Park < ActiveRecord::Base
 
 	has_many :comments
 	has_many :users
-	has_many :equipments
+	has_many :park_equipments
+	has_many :equipments, through: :park_equipments 
 
 	validates_presence_of :name, :address, :city, :state
 

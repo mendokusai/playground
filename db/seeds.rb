@@ -34,7 +34,7 @@ ryan_admin = User.create({
 ryan_user = User.create({
 	email: "info@ryanpauley.com",
 	password: "password",
-	username: "ryan",
+	username: "ryanosaur",
 	admin: false
 	})
 

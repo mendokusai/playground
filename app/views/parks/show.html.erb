@@ -4,6 +4,11 @@
 &markers=color:green%7Clabel:G%7C<%= @park.latitude %>,<%= @park.longitude %>"><br>
 
 <h3><%= @park.address %>, <%= @park.city %>, <%= @park.state %></h3>
+<h4>Equipment:</h4>
+<% @park.equipments.each do |item| %>
+<li><%= item.name %></li>
+<% end %>
+
 <h4>Description:</h4>
 <p><%= @park.description %></p>
 

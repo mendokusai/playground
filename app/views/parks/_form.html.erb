@@ -36,6 +36,9 @@
     <%= f.text_area :description %>
   </p>
 
+  <div class="form_group">
+<%= collection_check_boxes(:park, :equipment_ids, Equipment.all, :id, :name) %>
+
   <p>
     <%= f.submit %>
   </p>
