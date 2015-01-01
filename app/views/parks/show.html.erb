@@ -1,16 +1,18 @@
 <h1><%= @park.name %></h1>
 
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@park.name%>&zoom=<%= @zoom %> &size=600x300&maptype=roadmap
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@park.address%>&zoom=<%= @zoom %> &size=600x300&maptype=roadmap
 &markers=color:green%7Clabel:G%7C<%= @park.latitude %>,<%= @park.longitude %>"><br>
 
 <h3><%= @park.address %>, <%= @park.city %>, <%= @park.state %></h3>
+
+
+<h4>Description:</h4>
+<p><%= @park.description %></p>
+
 <h4>Equipment:</h4>
 <% @park.equipments.each do |item| %>
 <li><%= item.name %></li>
 <% end %>
-
-<h4>Description:</h4>
-<p><%= @park.description %></p>
 
 <h2>Comments</h2>
 

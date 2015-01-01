@@ -7,6 +7,8 @@
 	<% unless current_user == nil %>
 		<% if current_user.admin? %>
 			<%= link_to "Edit", edit_park_path(park) %>
+			<%= link_to 'Delete', park_path(park),
+method: :delete, data: {confirm: "Are your sure?" } %>
 	<% end %>
 	<% end %>
 	</li>

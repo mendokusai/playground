@@ -13,9 +13,9 @@ class ParksController < ApplicationController
 	def create
 		@park = Park.new(park_params)
 		if @park.save
-			redirect_to @park
+			redirect_to park_path(@park)
 		else
-			render 'new'
+			render :new
 		end
 	end
 
@@ -30,12 +30,12 @@ class ParksController < ApplicationController
 	end
 
 	def update
-		@park = Park.new(park_params)
-		if @park.save
-			redirect_to @park
+		@park = Park.find(params[:id])
+		if @park = Park.update(park_params)
 		else
-			render 'edit'
+			render :edit
 		end
+		redirect_to @park
 	end
 
 	def destroy
