@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   
+  get 'parks/search'
+  post 'parks/search'
+
   resources :parks do
     resources :comments
   end

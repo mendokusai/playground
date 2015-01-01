@@ -1,7 +1,8 @@
 <h1><%= @park.name %></h1>
 
+
 <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@park.address%>&zoom=<%= @zoom %> &size=600x300&maptype=roadmap
-&markers=color:green%7Clabel:G%7C<%= @park.latitude %>,<%= @park.longitude %>"><br>
+&markers=color:green%7Clabel:X%7C<%= @park.latitude %>,<%= @park.longitude %>"><br>
 
 <h3><%= @park.address %>, <%= @park.city %>, <%= @park.state %></h3>
 

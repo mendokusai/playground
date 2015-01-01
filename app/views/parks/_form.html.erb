@@ -1,4 +1,4 @@
-<%= form_for :park, url: parks_path do |f| %>
+<%= form_for @park do |f| %>
   <% if @park.errors.any? %>
   <div id="error_explanation">
   <h2><%= pluralize(@park.errors.count, "error") %> prohibited

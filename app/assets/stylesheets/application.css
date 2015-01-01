@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background: white;
+}
+
+header {
+	background: #cedbba;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Fredericka the Great', cursive;
+}
+
+p {
+	font-family: 'Cabin', sans-serif;
+}
+
+#sign_in {
+	color: red;
+}
+
+#search li{
+	display: inline-block;
+}
+
+header li {
+	display: inline-block;
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 1.4em;
+	padding-left: 2em;
+}

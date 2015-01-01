@@ -1,0 +1,12 @@
+<% unless @parksearch == nil %>
+	<ul>
+	<%= @parksearch.each do |park| %>
+		<%= park.name %>
+		<%= park.address %>
+		<%= park.city %>
+		<%= park.state %>
+	<% end %>
+<% else %>
+	<%= @parksearch = "no data, dr. jones." %>
+	</ul>
+<% end %>

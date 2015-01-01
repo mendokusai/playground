@@ -31,7 +31,7 @@ class ParksController < ApplicationController
 
 	def update
 		@park = Park.find(params[:id])
-		if @park = Park.update(park_params)
+		if @park.update(park_params)
 		else
 			render :edit
 		end
@@ -42,6 +42,11 @@ class ParksController < ApplicationController
 		@park = Park.find(params[:id])
 		@park.destroy
 
+		redirect_to parks_path
+	end
+
+	def search
+		@parksearch = Park.near(params[:location], params[:distance], units: :km)
 		redirect_to parks_path
 	end
 

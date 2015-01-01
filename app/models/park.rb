@@ -13,5 +13,4 @@ class Park < ActiveRecord::Base
 		"#{address}, #{city}, #{state}"
 	end
 
-
 end
