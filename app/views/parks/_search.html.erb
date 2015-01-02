@@ -1,9 +1,9 @@
 <ul id="search">
-<%= form_tag controller: "parks", action: :search, method: "get" do %>
+<%= form_tag(parks_path, method: "get") do %>
   <li><%= label_tag(:location, "Search Near:") %></li>
-	  <li><%= text_field_tag(:location)  %></li>
+	  <li><%= text_field_tag(:location, params[:location], placeholder: "City, State")  %></li>
   <li><%= label_tag(:distance, "Distance:") %></li>
-	  <li><%= text_field_tag(:distance, "5km")  %></li>
+	  <li><%= text_field_tag(:distance, params[:distance], placeholder: "5km")  %></li>
   <%= submit_tag("Search") %>
 <% end %>
 

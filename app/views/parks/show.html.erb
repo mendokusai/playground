@@ -15,6 +15,13 @@
 <li><%= item.name %></li>
 <% end %>
 
+<h5>Nearby Parks</h5>
+<ul>
+	<% @park.nearbys(5).each do |nearby_park| %>
+		<li><%= link_to nearby_park.name, nearby_park %></li>
+	<% end %>
+</ul>
+
 <h2>Comments</h2>
 
 <%= render @park.comments %>

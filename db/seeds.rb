@@ -64,10 +64,18 @@ park1 = Park.create({
 
 park2 = Park.create({
 	name: "Aranda Playing Fields",
-	address: "Baambila Street",
+	address: "Banambila Street",
 	city: "Aranda",
 	state: "ACT",
 	description: "Nice fields, boring playground."
+	})
+
+park3 = Park.create({
+	name: "Lyons Neighborhood Oval",
+	address: "Launcston Street",
+	city: "Lyons",
+	state: "ACT",
+	description: "A big outdoor space."
 	})
 
 # #equipment
@@ -88,4 +96,16 @@ baby_swing = Equipment.create({
 	name: "Infant Swing",
 	description: "A chain-rope swing with a rubber bucket seat.",
 	age_range: "6mo - 4yrs"
+	})
+
+see_saw = Equipment.create({
+	name: "See-saw",
+	description: "A standard see-saw for two children.",
+	age_range: "1yr and up"
+	})
+
+play_structure = Equipment.create({
+	name: "Metal Play Structure",
+	description: "A metal structure for play.",
+	age_range: "1yr and up"
 	})

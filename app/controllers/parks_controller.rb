@@ -3,7 +3,16 @@ class ParksController < ApplicationController
 
 
 	def index
-		@parks = Park.all
+		if params[:location].present?
+			unless params[:distance].present?
+				params[:distance] = 5
+			end
+			@parks = Park.near(params[:location], params[:distance] || 4, order: :distance)
+			params[:location] = nil
+			params[:distance] = nil
+		else	
+			@parks = Park.all
+		end
 	end
 
 	def new
@@ -45,10 +54,10 @@ class ParksController < ApplicationController
 		redirect_to parks_path
 	end
 
-	def search
-		@parksearch = Park.near(params[:location], params[:distance], units: :km)
-		redirect_to parks_path
-	end
+	# def search
+	# 	@parksearch = "this"
+	# 	redirect_to parks_path
+	# end
 
 	private
 		def park_params
