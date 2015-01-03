@@ -38,7 +38,7 @@ class EquipmentsController < ApplicationController
 	def destroy
 		@equip = Equipment.find(params[:id])
 		@equip.destroy
-		redirect_to equipments_path
+		redirect_to equipment_path
 	end
 
 	private

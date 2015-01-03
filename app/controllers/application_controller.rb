@@ -14,9 +14,6 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-  def search
-    @parks = Park.near(params[:location], params[:distance], units: :km)
-  end
 
   protected
   def configure_permitted_parameters

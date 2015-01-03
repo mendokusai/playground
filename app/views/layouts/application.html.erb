@@ -10,16 +10,17 @@
 </head>
 <body>
 
-<header>
-	<%= render "shared/nav" %>
-</header>
+	<header>
+		<%= render "shared/nav" %>
+	</header>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<main>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 
-<%= render "parks/search" %>
-
-<%= yield %>
+		<%= yield %>
+	</main>
 
 </body>
+
 </html>

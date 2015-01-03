@@ -3,13 +3,25 @@ class ParksController < ApplicationController
 
 
 	def index
+		if params[:button].present?
+			location = request.ip
+			unless location == "127.0.0.1"
+				@parks = Park.near(location.ip, 5 || 4, order: :distance)
+			else
+				@request = "You cannot 'Find Me' on a local server (#{location}), sorry."
+			end
+		end
 		if params[:location].present?
 			unless params[:distance].present?
 				params[:distance] = 5
 			end
 			@parks = Park.near(params[:location], params[:distance] || 4, order: :distance)
-			params[:location] = nil
-			params[:distance] = nil
+			if @parks.length == 0
+				@message = "Have you tried to search for City without State?"
+			else
+				params[:location] = nil
+				params[:distance] = nil
+			end
 		else	
 			@parks = Park.all
 		end

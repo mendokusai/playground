@@ -7,6 +7,7 @@
 #   inflect.plural /^(ox)$/i, '\1en'
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'
+	# inflext.irregular 'equipment', 'equipments'
 #   inflect.uncountable %w( fish sheep )
 # end
 

@@ -13,11 +13,4 @@ class Park < ActiveRecord::Base
 		"#{address}, #{city}, #{state}"
 	end
 
-	def self.search(query)
-		search_condition = "%" + query + "%"
-		@parksearch = [search_condition, search_condition]
-		# box = Geocoder::Calculations.bounding_box(query)
-		# Park.within_bounding_box(box)
-	end
-
 end

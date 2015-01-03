@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'users/index'
 
+  resources :equipments
+
   get 'equipments/index'
 
   devise_for :users
@@ -12,7 +14,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :equipments
 
  
 

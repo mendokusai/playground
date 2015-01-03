@@ -1,10 +1,15 @@
-<ul id="search">
-<%= form_tag(parks_path, method: "get") do %>
-  <li><%= label_tag(:location, "Search Near:") %></li>
-	  <li><%= text_field_tag(:location, params[:location], placeholder: "City, State")  %></li>
-  <li><%= label_tag(:distance, "Distance:") %></li>
-	  <li><%= text_field_tag(:distance, params[:distance], placeholder: "5km")  %></li>
-  <%= submit_tag("Search") %>
+<form class="navbar-form navbar-left" role="search">
+	<div class="form-group">
+		<%= form_tag(parks_path, method: "get") do %>
+		
+		  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		
+		<%= button_tag "Find me!", value: "search", class: "btn btn-default" %>
+  <%= label_tag(:location, "Search Near:") %>
+	<%= text_field_tag(:location, params[:location], class: 'form-control', placeholder: "Suburb, State")  %>
+  <%= label_tag(:distance, "Distance:") %>
+	<%= text_field_tag(:distance, params[:distance], class: 'form-control', placeholder: "5km")  %>
+  <%= submit_tag "Search", class: "btn btn-default" %>
 <% end %>
-
-</ul>
+</div>
+</form>

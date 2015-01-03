@@ -1,6 +1,12 @@
-<h1>Park Index</h1>
+<h1>Parks</h1>
 
 <ul>
+<% if @message.present? %>
+	<h5 class="notice"><%= @message %></h5>
+	<p>OR</strong> you could try to increase your distance.<br>Of course, it's also possible your parks haven't been added to the index <em>(so many parks, so little time)</em>, but you can help us by <strong>Adding A Park</strong>! <strong></p>
+	<% elsif @request.present? %>
+	<p class="notice"><%= @request %></p>
+<% end %>
 <% @parks.each do |park| %>
 	<li><strong><%= park.name %></strong>
 	<%= park.city %>
@@ -16,6 +22,7 @@ method: :delete, data: {confirm: "Are your sure?" } %>
 
 <% end %>
 </ul>
-
+<% unless @parks.length == Park.all.length %>
 <%= link_to "All Parks", parks_path %>
+<% end %>
 <%= link_to "Add A Park", new_park_path %>
