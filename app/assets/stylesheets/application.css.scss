@@ -17,6 +17,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ .map {
+ 	height: 100%;
+ 	margin: 0px;
+ }
+
 .notice {
  	font-size: 1.3em;
  	color: #f24d4d;

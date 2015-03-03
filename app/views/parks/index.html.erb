@@ -8,6 +8,10 @@
 	<p class="notice"><%= @request %></p>
 <% end %>
 
+<div style='width: 800px;'>
+  <div id="map-canvas" style='width: 300px; height: 200px;'></div>
+</div>
+
 <% @parks.each do |park| %>
 	<li><strong><%= park.name %></strong>
 	<%= park.city %>

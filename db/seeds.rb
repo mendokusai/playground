@@ -59,7 +59,7 @@ park1 = Park.create({
 	address: "Biffin Street",
 	city: "Cook",
 	state: "ACT",
-	description: "A well kept Oval"
+	description: "A well kept Oval used primarily for Cricket with a very simple playground."
 	})
 
 park2 = Park.create({
@@ -104,8 +104,49 @@ see_saw = Equipment.create({
 	age_range: "1yr and up"
 	})
 
+spinner = Equipment.create({
+	name: "Spinner",
+	description: "A metal spinning ride.",
+	age_range: "2yrs and up"
+	})
+
+spring_rider = Equipment.create({
+	name: "Spring Rider",
+	description: "A playful character-chair on a spring for rocking.",
+	age_range: "1yr and up"
+	})
+
 play_structure = Equipment.create({
 	name: "Metal Play Structure",
 	description: "A metal structure for play.",
 	age_range: "1yr and up"
+	})
+
+  # create_table "park_equipments", force: true do |t|
+  #   t.integer  "park_id"
+  #   t.integer  "equipment_id"
+  #   t.datetime "created_at"
+  #   t.datetime "updated_at"
+  # end
+
+ParkEquipment.destroy_all
+
+cook_swing = ParkEquipment.create({
+	park_id: park1.id,
+	equipment_id: swing.id
+	})
+
+cook_b_swing = ParkEquipment.create({
+	park_id: park1.id,
+	equipment_id: baby_swing.id
+	})
+
+cook_spinner = ParkEquipment.create({
+	park_id: park1.id,
+	equipment_id: spinner.id
+	})
+
+cook_spring_rider = ParkEquipment.create({
+	park_id: park1.id,
+	equipment_id: spring_rider.id
 	})

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :equipments
 
-  get 'equipments/index'
+  # get 'equipments/index'
 
   devise_for :users
   
